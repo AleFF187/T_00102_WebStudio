@@ -7,56 +7,91 @@ body {
 }
 
 .container {
-  width: 1252px; // (14 * 88) + (2 * 10)
+  max-width: 1252px; // (14 * 88) + (2 * 10)
   padding: 0 10px;
   margin: 0 auto;
 }
 
-//! разметка гридов
+//! сетка контейнера грида
 // *******************************************************
 .grid_page{
   display: grid;
-  grid-template-columns: repeat(14, minmax(10px, 88px));
-  grid-template-rows: repeat(5, 50px);
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  // grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+  // grid-template-rows: 500px repeat(4, 50px);
 }
 
+//! разметка элементов грида
 // *******************************************************
 .top_image {
   background-color: tomato;
+  height: 500px;
   grid-column: 1 / span 9;
   grid-row: 1 / 2;
-
+  @media (max-width: 800px) {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 580px) {
+    height: 280px;
+  }
+  @media (max-height: 380px) {
+    height: 320px;
+  }
 }
+
 // *******************************************************
 .top_name {
-  background-color: green;
+  background-color: #F0F0F0;
   grid-column: 10 / span 5;
   grid-row: 1 / 2;
+  @media (max-width: 800px) {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
 }
+
 // *******************************************************
 .middle_steps {
   background-color: gold;
   grid-column: 1 / span 5;
   grid-row: 2 / 4;
+  @media (max-width: 800px) {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
 }
+
 // *******************************************************
 .middle_starting {
   background-color: tomato;
   grid-column: 6 / span 9;
   grid-row: 2 / 3;
+  @media (max-width: 800px) {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+  }
 }
+
 // *******************************************************
 .middle_model {
   background-color: yellow;
   grid-column: 6 / span 9;
   grid-row: 3 / 4;
-
+  @media (max-width: 800px) {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+  }
 }
+
 // *******************************************************
 .bottom_copyright {
   background-color: green;
   grid-column: 1 / span 9;
   grid-row: 4 / 5;
+  @media (max-width: 800px) {
+    grid-column: 1 / -1;
+    grid-row: 6 / 7;
+  }
 }
 
 // *******************************************************
@@ -64,6 +99,10 @@ body {
   background-color: gold;
   grid-column: 10 / span 5;
   grid-row: 4 / 5;
+  @media (max-width: 800px) {
+    grid-column: 1 / -1;
+    grid-row: 7 / 8;
+  }
 }
 
 // *******************************************************
@@ -71,6 +110,10 @@ body {
   background-color: tomato;
   grid-column: 1 / span 14;
   grid-row: 5 / 6;
+  @media (max-width: 800px) {
+    grid-column: 1 / -1;
+    grid-row: 8 / 9;
+  }
 }
 
 // *******************************************************
